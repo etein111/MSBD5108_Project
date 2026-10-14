@@ -34,8 +34,8 @@ All tasks reuse public datasets and a fixed prompt schema so Jev and Qwen3 see i
 
 **2. Systems compared.**
 
-- *Jev:* open-weights JEV-27B served locally via vLLM [3]; the official Jev API is treated only as an optional upper bound if a key becomes available.
-- *LLM baseline:* Qwen3 (open-weight, local) [7], prompted to emit the same typed decision.
+- *Jev:* open-weights `autotrust/JEV-27B` served locally via vLLM [3]; the official (closed) Jev API is treated only as an optional upper bound if a key becomes available.
+- *LLM baseline:* `Qwen/Qwen3.8-27B` — the frozen backbone of JEV-27B (27B dense, Apache 2.0) [7] — prompted to emit the same typed decision via constrained decoding. Since the backbone is the *base* (non-instruct) model, it uses fixed few-shot in-context examples, whereas Jev answers natively zero-shot; this asymmetry is documented and held constant.
 
 *Decision extraction (removing the format confound).* Jev returns a typed decision natively. Qwen3 is made comparable by emitting the identical decision through **constrained decoding / structured JSON output** (same schema, no free-text parsing); the decision — and therefore accuracy, cost, and latency — is compared on this structured path.
 
@@ -71,7 +71,7 @@ This design directly tests whether Jev's known weaknesses (injection, calibratio
 
 [2] *Jev Calibration Audit* (independent API-only audit) — [GitHub](https://github.com/jujumilk3/jev-calibration-audit)
 
-[3] AutoTrust AI, *JEV-27B: An Open Decision Model for Self-Hosted AI Agents* — [link](https://www.tmcnet.com/usubmit/2026/09/28/10452979.htm)
+[3] AutoTrust AI, *JEV-27B: An Open Decision Model for Self-Hosted AI Agents* — [Hugging Face](https://huggingface.co/autotrust/JEV-27B)
 
 [4] LangChain, *Jev-as-a-Judge for Agent Evals* — [link](https://www.langchain.com/blog/jev-agent-evals-langsmith)
 
@@ -79,7 +79,7 @@ This design directly tests whether Jev's known weaknesses (injection, calibratio
 
 [6] *Just Ask Jev: Reinforcement Learning for Calibrated Decisions as a Zero-Shot Detector of AI Alignment Failures* — [arXiv](https://arxiv.org/html/2609.29429)
 
-[7] *Qwen3 Technical Report* — [arXiv](https://arxiv.org/abs/2505.09388)
+[7] *Qwen3.8-27B* (27B dense, Apache 2.0) — [GitHub](https://github.com/AlibabaCloud-Official/Qwen3.8-27B)
 
 [8] Hartvigsen et al., *ToxiGen: A Large-Scale Machine-Generated Dataset for Adversarial and Implicit Hate Speech Detection* — [arXiv](https://arxiv.org/abs/2203.09509)
 
