@@ -21,6 +21,12 @@
 
 ## Project Boundaries
 
+This project focuses on evaluating Jev's effectiveness in typed content-safety decisions, covering spam detection, phishing detection, and toxicity assessment. The tasks include binary classification (safe/unsafe) and ordinal severity scoring (1–5), using publicly available datasets such as Enron, SMS Spam, Jigsaw, and ToxiGen.
+
+The evaluation is limited to two primary systems: Jev (`JEV-27B`) and its proposed general-purpose LLM baseline (`Qwen3.8-27B`). Their performance will be compared under consistent evaluation conditions across four dimensions: **task accuracy, probability calibration, inference cost, and latency**. Robustness will also be examined through controlled adversarial perturbations, including prompt injection, option renaming, abstention removal, and option-order permutation.
+
+The project emphasizes inference-time evaluation rather than model development. It excludes model pretraining, fine-tuning, architectural modifications, and general-purpose text generation. Post-hoc probability calibration is included, but the development of new calibration algorithms is outside the scope. The study aims to identify the practical strengths and limitations of typed decision models compared with conventional LLMs.
+
 ## Planned Methodologies and Deliverable
 
 **Goal.** Evaluate Jev — TypeSafe AI's "System One" typed-decision model — on a content-safety NLP suite (spam, phishing, and toxicity detection), and benchmark it head-to-head against an open-weight LLM baseline (Qwen3) along four axes: **task success rate, cost, latency, and calibration**. The core question is whether Jev's fast, calibrated, typed decisions remain the better choice than a general-purpose LLM, including under adversarial inputs that specifically target decision models. All comparisons follow an explicit fair-comparison protocol (below) rather than ad-hoc prompting.
