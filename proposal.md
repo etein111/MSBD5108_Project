@@ -7,7 +7,7 @@
 
 ## Topic introduction
 
-**This project will introduce what Jev is and its overarching goal in Natural Language Processing/AI. Define the problem setup explicitly (e.g., given X input data, the task is to predict/evaluate Y). Moreover, summarize the key difficulties in current approaches when handling Jev, e.g., Agents are still inherently untrustworthy, establishing why a novel methodology is needed.**
+**Jev a specialized System One decision model trained via Reinforcement Learning for Calibrated Decisions has emerged as a dedicated alternative to using general-purpose LLMs (e.g., **Qwen3-direct**) as safety judges. Unlike generative architectures that rely on verbose, token-by-token autoregressive reasoning, Jev directly predicts discrete decision categories paired with native probability distributions, targeting key LLM bottlenecks in inference latency, logit calibration, and adversarial vulnerability.**
 
 ## Core Research Question
 
