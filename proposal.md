@@ -8,7 +8,7 @@
 
 ## Topic introduction
 
-Jev a specialized System One decision model trained via Reinforcement Learning for Calibrated Decisions has emerged as a dedicated alternative to using general-purpose LLMs (e.g., **Qwen3-direct**) as safety judges. Unlike generative architectures that rely on verbose, token-by-token autoregressive reasoning, Jev directly predicts discrete decision categories paired with native probability distributions, targeting key LLM bottlenecks in inference latency, logit calibration, and adversarial vulnerability.
+This project evaluates the performance of Jev a specialized System One decision model trained via Reinforcement Learning for Calibrated Decisions against general-purpose Large Language Models (LLMs), represented by Qwen3.8, for typed content-safety moderation. Formally, given an unstructured input X (e.g., user prompts or agent contexts), the task is to predict a structured safety evaluation $Y \in \mathcal{Y}$ (binary or ordinal risk categories) alongside a calibrated confidence probability. This evaluation is critical because content safety guardrails serve as the frontline security boundary for modern AI systems and autonomous agents. However, using general-purpose LLMs via direct prompt-based judgment reveals severe operational bottlenecks necessitating a specialized, type-safe decision architecture.
 
 ## Core Research Question
 
